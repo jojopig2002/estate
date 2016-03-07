@@ -21,15 +21,6 @@ module.exports = function(grunt) {
         }
       }
     },
-    qunit: {
-      all: {
-        options: {
-          urls: [
-            'http://localhost/housemap/test/test.html'
-          ]
-        }
-      }
-    },
     connect: {
       server: {
         options: {
@@ -39,7 +30,7 @@ module.exports = function(grunt) {
       }
     },
     jshint: {
-      files: ['Gruntfile.js', 'js/*.js'],
+      files: ['Gruntfile.js', 'app/**/*.js', '*.js'],
       options: {
         // options here to override JSHint defaults
         force: true,
@@ -59,8 +50,8 @@ module.exports = function(grunt) {
     },
     watch: {
       js: {
-        files: ['<%= jshint.files %>'],
-        tasks: ['jshint'],
+        files: ['<%= jshint.files %>', 'app/**/*.html', '*.html', '*.less'],
+        tasks: ['jshint', 'less'],
         options: {
           livereload: true
         }
@@ -71,6 +62,20 @@ module.exports = function(grunt) {
           livereload: 1337
         }
       }
+    },
+    less: {
+      // production config is also available
+      development: {
+        options: {
+          // Specifies directories to scan for @import directives when parsing. 
+          // Default value is the directory of the source, which is probably what you want.
+          paths: ["./"],
+        },
+        files: {
+          // compilation.css  :  source.less
+          "app.css": "*.less"
+        }
+      },
     },
     karma: {
       unit: {
@@ -108,7 +113,7 @@ module.exports = function(grunt) {
       }
     }
   });
-  
+
   // grunt.loadNpmTasks
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-jshint');
@@ -119,6 +124,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-karma');
   grunt.loadNpmTasks('grunt-protractor-webdriver');
   grunt.loadNpmTasks('grunt-protractor-runner');
+  grunt.loadNpmTasks('grunt-contrib-less');
 
   grunt.registerTask('lint', ['jshint']);
   grunt.registerTask('unittest', ['karma']);

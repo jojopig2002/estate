@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html ng-app="estate">
+<head>
+	<title>Property List</title>
+	<link rel="stylesheet" type="text/css" href="app.css">
+	<script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
+	<script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="vendor/jquery-ui/jquery-ui.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+	<script type="text/javascript" src="app/property/property_list_controller.js"></script>
+	<script type="text/javascript" src="app/components/server_service.js"></script>
+	<script type="text/javascript" src="app/directives/property_item.js"></script>
+</head>
+<body>
+	<div id="main-panel" ng-include="'app/property/property_list.html'" ng-controller="PropertyListController as prop"></div>
+	<script src="//localhost:35729/livereload.js"></script>
+</body>
+</html> 
