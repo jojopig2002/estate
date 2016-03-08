@@ -25,7 +25,8 @@ module.exports = function(grunt) {
       server: {
         options: {
           port: 8000,
-          base: '.'
+          base: './',
+          keepalive: true
         }
       }
     },
@@ -121,9 +122,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-connect');
-  grunt.loadNpmTasks('grunt-karma');
-  grunt.loadNpmTasks('grunt-protractor-webdriver');
-  grunt.loadNpmTasks('grunt-protractor-runner');
+  // grunt.loadNpmTasks('grunt-karma');
+  // grunt.loadNpmTasks('grunt-protractor-webdriver');
+  // grunt.loadNpmTasks('grunt-protractor-runner');
   grunt.loadNpmTasks('grunt-contrib-less');
 
   grunt.registerTask('lint', ['jshint']);

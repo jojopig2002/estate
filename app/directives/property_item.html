@@ -1,0 +1,15 @@
+<div class="property-card">
+	<div class="property-card-header" style="background-color: {{oItem.itemData.agency.brandingColors.primary}}">
+		<div class="property-card-header-left" >
+			<img src={{oItem.itemData.agency.logo}}></img>
+		</div>
+	</div>
+	<div class="property-card-body">
+		<img src={{oItem.itemData.mainImage}}></img>
+		<button ng-if="oItem.itemOption.type==='result'" class="btn btn-success">Add property</button>
+		<button ng-if="oItem.itemOption.type==='saved'" class="btn btn-danger">Del property</button>
+	</div>
+	<div class="property-card-footer">
+		<p>{{oItem.itemData.price}}</p>
+	</div>
+</div>

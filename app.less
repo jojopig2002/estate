@@ -1,3 +1,85 @@
 #main-panel{
-	color: red;
+
+}
+.property-card{
+	width: 200px;
+	height: 200px;
+	border-radius: 5px;
+	border: 1px solid red;
+	margin: 10px;
+	.property-card-header{
+		height: 40px;
+		border-top-left-radius: 5px;
+		border-top-right-radius: 5px;
+		border-bottom: 1px solid red;
+		.property-card-header-left{
+			border-top-left-radius: 5px;
+			float: left;
+			width: 70%;
+			padding: 3px;
+			img{
+				height: 90%;
+			}
+		}
+	}
+	.property-card-body{
+		height: 120px;
+		padding-left: 22px;
+		position: relative;
+		img{
+			height: 98%;
+		}
+		button{
+			position: absolute;
+			bottom: 20px;
+			right: 43px;
+			display: none;
+		}
+	}
+	.property-card-footer{
+		height: 40px;
+		border-top: 1px solid red;		
+		p{
+			text-align: center;
+			margin-top: 10px;
+		}
+	}
+}
+.property-card .property-card-body:hover button{
+	display: block;
+}
+.property-card .property-card-body:hover img{
+	opacity: 0.5;
+}
+#property-panel{
+	#property-panel-header{
+		h3{
+			text-align: center;
+		}
+		margin-bottom: 25px;
+	}
+	#property-panel-left{
+		float: left;
+		width: 45%;
+		#property-panel-left-left{
+			border: dashed 3px gray;
+			float: right;
+			border-radius: 10px;
+			h4{
+				text-align: center;
+			}
+		}
+	}
+	#property-panel-right{
+		float: right;
+		width: 45%;
+		#property-panel-right-right{
+			border: dashed 3px gray;
+			float: left;
+			border-radius: 10px;
+			h4{
+				text-align: center;
+			}
+		}
+	}
 }
