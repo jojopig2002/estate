@@ -1,10 +1,18 @@
 (function() {
   'use strict';
-  var PropItem = function(oItem) {
+  var PropItem = function(oItem, actionCallbacks, oElement) {
     this.propItem = oItem;
+    this.element = oElement;
+    this.callbacks = actionCallbacks;
   };
   PropItem.prototype.init = function() {
-
+    if (this.propItem.itemOption.dragOption) {
+      //init draggable option for a media item
+      this.propItem.itemOption.dragOption.helper = this.callbacks.dragHelper;
+      this.propItem.itemOption.dragOption.start = this.callbacks.dragStart;
+      this.propItem.itemOption.dragOption.stop = this.callbacks.dragStop;
+      $(this.element).draggable(this.propItem.itemOption.dragOption);
+    }
   };
 
   angular.module('estate').directive('propertyItem', function() {
@@ -19,7 +27,7 @@
         scope.$watch('propertyItem', function(newValue, oldValue) {
           scope.oItem = JSON.parse(newValue);
         });
-        var oPropItem = new PropItem(scope.oItem);
+        var oPropItem = new PropItem(scope.oItem, scope.callbacks, element);
         oPropItem.init();
         scope.deleteProp = function() {
           scope.callbacks.deleteProperty(scope.itemIdx);

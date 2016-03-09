@@ -3,16 +3,16 @@
 		<h3>Besides click to add properties, you can also drag properties to saved set and sort saved set by dragging</h3>
 	</div>
 	<div id="property-panel-left">
+		<h4>Results</h4>
 		<div id="property-panel-left-left">
-			<h4>Results</h4>
-			<div ng-repeat="item in prop.resultPropertyModel track by $index" property-item={{item}} callbacks="prop.actionCallbacks" item-idx={{$index}}>
+			<div ng-repeat="item in prop.resultPropertyModel track by $index" property-item={{item}} callbacks="prop.actionCallbacks" item-idx={{$index}} data-type="result" data-index = "{{$index}}">
 			</div>
 		</div>
 	</div>
 	<div id="property-panel-right">
-		<div id="property-panel-right-right">
-			<h4>Saved Properties</h4>
-			<div ng-repeat="item in prop.savedPropertyModel track by $index" property-item={{item}} callbacks="prop.actionCallbacks" item-idx={{$index}}>
+		<h4>Saved Properties</h4>
+		<div sortable id="property-panel-right-right">
+			<div ng-repeat="item in prop.savedPropertyModel track by $index" property-item={{item}} callbacks="prop.actionCallbacks" item-idx={{$index}} data-type = "saved" data-index = "{{$index}}">
 			</div>
 		</div>
 	</div>
