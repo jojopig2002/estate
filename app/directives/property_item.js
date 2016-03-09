@@ -21,6 +21,12 @@
         });
         var oPropItem = new PropItem(scope.oItem);
         oPropItem.init();
+        scope.deleteProp = function() {
+          scope.callbacks.deleteProperty(scope.itemIdx);
+        };
+        scope.addProp = function() {
+          scope.callbacks.addProperty(scope.itemIdx);
+        };
       },
       templateUrl: 'app/directives/property_item.html'
     };

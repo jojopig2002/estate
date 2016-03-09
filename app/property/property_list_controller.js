@@ -6,7 +6,23 @@
     self.resultPropertyModel = [];
     self.savedPropertyModel = [];
 
+
     loadItems();
+
+    self.deleteProp = function(idx) {
+      self.savedPropertyModel.splice(idx, 1);
+    };
+
+    self.addProp = function(idx) {
+      var oItem = angular.copy(self.resultPropertyModel[idx]);
+      oItem.itemOption.type = 'saved';
+      self.savedPropertyModel.push(oItem);
+    };
+
+    self.actionCallbacks = {
+      deleteProperty: self.deleteProp,
+      addProperty: self.addProp
+    };
 
     function loadItems() {
       ServerService.getData('data.json').then(function(response) {

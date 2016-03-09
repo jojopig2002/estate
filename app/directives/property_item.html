@@ -6,8 +6,8 @@
 	</div>
 	<div class="property-card-body">
 		<img src={{oItem.itemData.mainImage}}></img>
-		<button ng-if="oItem.itemOption.type==='result'" class="btn btn-success">Add property</button>
-		<button ng-if="oItem.itemOption.type==='saved'" class="btn btn-danger">Del property</button>
+		<button ng-if="oItem.itemOption.type==='result'" class="btn btn-success" ng-click="addProp()">Add property</button>
+		<button ng-if="oItem.itemOption.type==='saved'" class="btn btn-danger" ng-click="deleteProp()">Del property</button>
 	</div>
 	<div class="property-card-footer">
 		<p>{{oItem.itemData.price}}</p>
