@@ -16,10 +16,10 @@ Run <code>grunt connect</code> to start a web server.
 Navigate your browser to http://localhost:8000 to see the app running in your browser.
 
 <h3>Additional features</h3>
-Besides clicking to add properties, you could also drag properties from 'results' to 'saved' set and sort 'saved' set by drag and drop
+Besides clicking to add properties, you could also drag properties from 'results' to 'saved' set and sort 'saved' set by drag and drop.
 
 <h3>Unit test</h3>
 Run <code>grunt karma</code> to execute unit tests.
 
 <h3>Development</h3>
-Run <code>grunt watch</code> to liveload and compile less files to css files
+Run <code>grunt watch</code> to liveload and compile less files to css files.
