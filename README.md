@@ -17,7 +17,7 @@ Navigate your browser to http://localhost:8000 to see the app running in your br
 
 <h3>Additional features</h3>
 Besides clicking to add properties, you could also drag properties from 'results' to 'saved' set and sort 'saved' set by drag and drop.
-
+<img src="http://i65.tinypic.com/2gx0j05.png"></IMG>
 <h3>Unit test</h3>
 Run <code>grunt karma</code> to execute unit tests.
 
