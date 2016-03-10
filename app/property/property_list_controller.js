@@ -16,6 +16,7 @@
     self.addProp = function(idx) {
       var oItem = angular.copy(self.resultPropertyModel[idx]);
       oItem.itemOption.type = 'saved';
+      oItem.itemOption.dragOption = null;
       self.savedPropertyModel.push(oItem);
     };
 
